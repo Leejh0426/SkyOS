@@ -3,10 +3,21 @@
   <ItemGroup>
     <ClCompile Include="kmain.cpp" />
     <ClCompile Include="SkyConsole.cpp" />
+    <ClCompile Include="GDT.cpp">
+      <Filter>CPU</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kmain.h" />
     <ClInclude Include="SkyConsole.h" />
     <ClInclude Include="MultiBoot.h" />
+    <ClInclude Include="GDT.h">
+      <Filter>CPU</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CPU">
+      <UniqueIdentifier>{d0ee344d-9065-4c5d-8a54-a5bd72ad2ede}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

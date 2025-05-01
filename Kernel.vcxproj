@@ -11,10 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GDT.cpp" />
     <ClCompile Include="kmain.cpp" />
     <ClCompile Include="SkyConsole.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GDT.h" />
     <ClInclude Include="kmain.h" />
     <ClInclude Include="MultiBoot.h" />
     <ClInclude Include="SkyConsole.h" />
