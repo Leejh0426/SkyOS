@@ -78,4 +78,6 @@ int GDTInitialize() {
 
 	//GDTR 레지스터에 GDT 로드
 	InstallGDT();
+
+	return 0;
 }

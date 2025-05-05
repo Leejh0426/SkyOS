@@ -6,12 +6,38 @@
     <ClCompile Include="GDT.cpp">
       <Filter>CPU</Filter>
     </ClCompile>
+    <ClCompile Include="IDT.cpp">
+      <Filter>CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="PIC.cpp">
+      <Filter>CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="HAL.cpp">
+      <Filter>CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyAPI.cpp" />
+    <ClCompile Include="PIT.cpp">
+      <Filter>CPU</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kmain.h" />
     <ClInclude Include="SkyConsole.h" />
     <ClInclude Include="MultiBoot.h" />
     <ClInclude Include="GDT.h">
+      <Filter>CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="IDT.h">
+      <Filter>CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="PIC.h">
+      <Filter>CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="HAL.h">
+      <Filter>CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyAPI.h" />
+    <ClInclude Include="PIT.h">
       <Filter>CPU</Filter>
     </ClInclude>
   </ItemGroup>

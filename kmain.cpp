@@ -40,13 +40,33 @@ void InitializeConstructor()
 	//내부 구현은 나중에 추가한다.
 }
 
+void HardwareInitialize();
+void TestFPU();
+
 void kmain(unsigned long magic, unsigned long addr)
 {
 	InitializeConstructor(); //글로벌 객체 초기화
 
 	SkyConsole::Initialize(); //화면에 문자열을 찍기 위해 초기화한다.
 
-	SkyConsole::Print("Hello World!!\n");
+	SkyConsole::Print("*** Sky OS Console System Init ***\n");
+
+	kEnterCriticalSection(&g_criticalSection);
+
+	HardwareInitialize();
+	SkyConsole::Print("Hardware Init Complete\n");
+
+	kLeaveCriticalSection(&g_criticalSection);
+
+	StartPITCounter(100, I86_PIT_OCW_COUNTER_0, I86_PIT_OCW_MODE_SQUAREWAVEGEN);
 
 	for (;;); //메인함수의 진행을 막음, 루프
+}
+
+void HardwareInitialize()
+{
+	GDTInitialize();
+	IDTInitialize(0x8);
+	PICInitialize(0x20, 0x28);
+	InitializePIT();
 }

@@ -12,13 +12,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GDT.cpp" />
+    <ClCompile Include="HAL.cpp" />
+    <ClCompile Include="IDT.cpp" />
     <ClCompile Include="kmain.cpp" />
+    <ClCompile Include="PIC.cpp" />
+    <ClCompile Include="PIT.cpp" />
+    <ClCompile Include="SkyAPI.cpp" />
     <ClCompile Include="SkyConsole.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GDT.h" />
+    <ClInclude Include="HAL.h" />
+    <ClInclude Include="IDT.h" />
     <ClInclude Include="kmain.h" />
     <ClInclude Include="MultiBoot.h" />
+    <ClInclude Include="PIC.h" />
+    <ClInclude Include="PIT.h" />
+    <ClInclude Include="SkyAPI.h" />
     <ClInclude Include="SkyConsole.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -70,7 +80,7 @@
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>./;../../Include;./.;../../CommonLib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;../../Include;./.;../../CommonLib;../../CommonLib/stl;</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>DEBUG;ARCH_X86;%(PreprocessorDefinitions);</PreprocessorDefinitions>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <StringPooling>

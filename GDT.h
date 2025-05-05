@@ -15,3 +15,5 @@ typedef struct tag_gdtDescriptor {
 	 uint8_t baseHigh;
 
 }gdt_descriptor;
+
+int GDTInitialize();

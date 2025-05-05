@@ -3,14 +3,13 @@
 #include <stdint.h>
 #include <string.h>
 #include "sprintf.h"
+#include "HAL.h"
 
 
 extern "C" int _outp(unsigned short, int);
 
-void OutPortByte(ushort port, uchar value)
-{
-	_outp(port, value);
-}
+extern void OutPortByte(ushort port, uchar value);
+
 
 namespace SkyConsole
 {
