@@ -19,6 +19,12 @@
     <ClCompile Include="PIT.cpp">
       <Filter>CPU</Filter>
     </ClCompile>
+    <ClCompile Include="FPU.cpp">
+      <Filter>CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="InitKernel.cpp" />
+    <ClCompile Include="SkyTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kmain.h" />
@@ -40,6 +46,12 @@
     <ClInclude Include="PIT.h">
       <Filter>CPU</Filter>
     </ClInclude>
+    <ClInclude Include="FPU.h">
+      <Filter>CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="InitKernel.h" />
+    <ClInclude Include="SkyTest.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CPU">

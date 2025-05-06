@@ -6,9 +6,11 @@
 #include "MultiBoot.h"
 #include "SkyConsole.h"
 #include "SkyAPI.h"
+#include "InitKernel.h"
 #include "GDT.h"
 #include "IDT.h"
 #include "PIC.h"
 #include "PIT.h"
+#include "FPU.h"
 
 void kmain(unsigned long, unsigned long);

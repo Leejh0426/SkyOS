@@ -11,25 +11,33 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="FPU.cpp" />
     <ClCompile Include="GDT.cpp" />
     <ClCompile Include="HAL.cpp" />
     <ClCompile Include="IDT.cpp" />
+    <ClCompile Include="InitKernel.cpp" />
     <ClCompile Include="kmain.cpp" />
     <ClCompile Include="PIC.cpp" />
     <ClCompile Include="PIT.cpp" />
     <ClCompile Include="SkyAPI.cpp" />
     <ClCompile Include="SkyConsole.cpp" />
+    <ClCompile Include="SkyTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="FPU.h" />
     <ClInclude Include="GDT.h" />
     <ClInclude Include="HAL.h" />
     <ClInclude Include="IDT.h" />
+    <ClInclude Include="InitKernel.h" />
     <ClInclude Include="kmain.h" />
     <ClInclude Include="MultiBoot.h" />
     <ClInclude Include="PIC.h" />
     <ClInclude Include="PIT.h" />
     <ClInclude Include="SkyAPI.h" />
     <ClInclude Include="SkyConsole.h" />
+    <ClInclude Include="SkyTest.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3EEB4C94-0534-40F5-BBF1-01C0C0AC5658}</ProjectGuid>

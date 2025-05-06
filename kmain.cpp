@@ -1,4 +1,5 @@
 ﻿#include "kmain.h"
+#include "SkyTest.h"
 
 _declspec(naked) void multiboot_entry(void)
 {
@@ -56,11 +57,19 @@ void kmain(unsigned long magic, unsigned long addr)
 	HardwareInitialize();
 	SkyConsole::Print("Hardware Init Complete\n");
 
+	//Interrupt 테스트 코드
+	SetInterruptVector();
+
+	SkyConsole::Print("Interrput Handler Init Complete\n");
+
 	kLeaveCriticalSection(&g_criticalSection);
 
 	StartPITCounter(100, I86_PIT_OCW_COUNTER_0, I86_PIT_OCW_MODE_SQUAREWAVEGEN);
 
-	for (;;); //메인함수의 진행을 막음, 루프
+	TestInterrupt();
+
+	for (;;);
+
 }
 
 void HardwareInitialize()
@@ -70,3 +79,29 @@ void HardwareInitialize()
 	PICInitialize(0x20, 0x28);
 	InitializePIT();
 }
+
+void TestFPU()
+{
+	float sampleFloat = 0.3f;
+	sampleFloat *= 5.482f;
+	SkyConsole::Print("sample Float Value %f\n", sampleFloat);
+}
+
+
+//FPU테스트 코드
+/*if (false == InitFPU())
+{
+	SkyConsole::Print("[Warning] Floating Pointer Unit Detection Fail\n");
+}
+else
+{
+	EnableFPU();
+	SkyConsole::Print("FPU Init..\n");
+}
+
+TestFPU();
+
+kLeaveCriticalSection(&g_criticalSection);
+
+StartPITCounter(100, I86_PIT_OCW_COUNTER_0, I86_PIT_OCW_MODE_SQUAREWAVEGEN);
+*/
