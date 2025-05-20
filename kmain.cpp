@@ -87,6 +87,13 @@ void TestFPU()
 	SkyConsole::Print("sample Float Value %f\n", sampleFloat);
 }
 
+bool InitMemoryManager(multiboot_info* pBootInfo) {
+	PhysicalMemoryManager::EnablePaging(false);
+	PhysicalMemoryManager::Initialize(pBootInfo);
+	VirtualMemoryManager::Initialize();
+	return true;
+}
+
 
 //FPU테스트 코드
 /*if (false == InitFPU())

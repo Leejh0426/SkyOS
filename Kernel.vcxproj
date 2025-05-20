@@ -18,11 +18,15 @@
     <ClCompile Include="IDT.cpp" />
     <ClCompile Include="InitKernel.cpp" />
     <ClCompile Include="kmain.cpp" />
+    <ClCompile Include="PageDirectoryEntry.cpp" />
+    <ClCompile Include="PageTableEntry.cpp" />
+    <ClCompile Include="PhysicalMemoryManager.cpp" />
     <ClCompile Include="PIC.cpp" />
     <ClCompile Include="PIT.cpp" />
     <ClCompile Include="SkyAPI.cpp" />
     <ClCompile Include="SkyConsole.cpp" />
     <ClCompile Include="SkyTest.cpp" />
+    <ClCompile Include="VirtualMemoryManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exception.h" />
@@ -33,11 +37,16 @@
     <ClInclude Include="InitKernel.h" />
     <ClInclude Include="kmain.h" />
     <ClInclude Include="MultiBoot.h" />
+    <ClInclude Include="PageDirectoryEntry.h" />
+    <ClInclude Include="PageTableEntry.h" />
+    <ClInclude Include="PhysicalMemoryManager.h" />
     <ClInclude Include="PIC.h" />
     <ClInclude Include="PIT.h" />
     <ClInclude Include="SkyAPI.h" />
     <ClInclude Include="SkyConsole.h" />
+    <ClInclude Include="SkyOS.h" />
     <ClInclude Include="SkyTest.h" />
+    <ClInclude Include="VirtualMemoryManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3EEB4C94-0534-40F5-BBF1-01C0C0AC5658}</ProjectGuid>

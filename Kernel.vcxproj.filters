@@ -25,6 +25,18 @@
     <ClCompile Include="Exception.cpp" />
     <ClCompile Include="InitKernel.cpp" />
     <ClCompile Include="SkyTest.cpp" />
+    <ClCompile Include="PhysicalMemoryManager.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualMemoryManager.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="PageDirectoryEntry.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="PageTableEntry.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kmain.h" />
@@ -52,10 +64,26 @@
     <ClInclude Include="Exception.h" />
     <ClInclude Include="InitKernel.h" />
     <ClInclude Include="SkyTest.h" />
+    <ClInclude Include="PhysicalMemoryManager.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyOS.h" />
+    <ClInclude Include="VirtualMemoryManager.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="PageDirectoryEntry.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="PageTableEntry.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CPU">
       <UniqueIdentifier>{d0ee344d-9065-4c5d-8a54-a5bd72ad2ede}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{cbb9bc9c-4f26-40df-9d3b-51ef14fb02fb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
