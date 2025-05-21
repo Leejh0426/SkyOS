@@ -5,6 +5,9 @@
 #include "PageDirectoryEntry.h"
 #include "PageTableEntry.h"
 
+#define USER_VIRTUAL_STACK_ADDRESS 0x00F00000
+#define KERNEL_VIRTUAL_HEAP_ADDRESS 0x10000000
+
 using namespace PageTableEntry;
 using namespace PageDirectoryEntry;
 
@@ -17,9 +20,9 @@ using namespace PageDirectoryEntry;
 //페이지 디렉토리 하나가 표현할 수 있는 주소공간 4GB
 #define DTABLE_ADDR_SPACE_SIZE 0x100000000
 
-#define PAGE_DIRECTORY_INDEX (x) ((x) >> 22) & 0x3ff) //0x3ff = 00011 1111 1111 10개비트마스킹
-#define PAGE_TABLE_INDEX (x) ((x)>>12) & 0x3ff)
-#define PAGE_GET_PHYSICAL_ADDRESS (x) (*x & ~0xfff)
+#define PAGE_DIRECTORY_INDEX(x) (((x) >> 22) & 0x3ff) //0x3ff = 00011 1111 1111 10개비트마스킹
+#define PAGE_TABLE_INDEX(x) (((x)>>12) & 0x3ff)
+#define PAGE_GET_PHYSICAL_ADDRESS(x) (*x & ~0xfff)
 
 
 #define MAX_PAGE_DIRECTORY_COUNT 40

@@ -11,17 +11,16 @@ void SKYASSERT(bool result, const char* pMsg);
 //동기화
 /////////////////////////////////////////////////////////////////////////////
 typedef struct _CRITICAL_SECTION {
-	
+
 	LONG LockRecursionCount;
 	HANDLE OwningThread;        // from the thread's ClientId->UniqueThread
-	      
-} CRITICAL_SECTION, *LPCRITICAL_SECTION;;
+
+} CRITICAL_SECTION, * LPCRITICAL_SECTION;;
 
 extern CRITICAL_SECTION g_criticalSection;
 
-void SKYAPI kEnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection);
-void SKYAPI kInitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection);
-void SKYAPI kLeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection);
+#define kEnterCriticalSection()	__asm	PUSHFD	__asm CLI
+#define kLeaveCriticalSection()		__asm	POPFD
 
 /////////////////////////////////////////////////////////////////////////////
 //스레드

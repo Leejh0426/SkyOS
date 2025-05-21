@@ -23,42 +23,6 @@ void SKYAPI kInitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 	lpCriticalSection->LockRecursionCount = 0;
 	lpCriticalSection->OwningThread = 0;
 }
-
-void SKYAPI kEnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-{
-	if (lpCriticalSection->LockRecursionCount == 0)
-	{
-		_asm cli
-	}
-
-	lpCriticalSection->LockRecursionCount++;
-
-	//DWORD threadId = kGetCurrentThreadId();
-	//SKYASSERT((HANDLE)threadId == lpCriticalSection->OwningThread || lpCriticalSection->OwningThread == 0, "kEnterCriticalSection");
-
-	//if (lpCriticalSection->OwningThread == (HANDLE)threadId)
-	//{
-		//lpCriticalSection->LockRecursionCount++;
-	/*
-	else
-	{
-		lpCriticalSection->OwningThread = (HANDLE)threadId;
-		lpCriticalSection->LockRecursionCount = 1;
-	}*/
-}
-
-void SKYAPI kLeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-{
-	//DWORD threadId = kGetCurrentThreadId();
-	//SKYASSERT((HANDLE)threadId == lpCriticalSection->OwningThread, "kLeaveCriticalSection");
-	lpCriticalSection->LockRecursionCount--;
-	//if (lpCriticalSection->LockRecursionCount == 0)
-	{
-	//	lpCriticalSection->OwningThread = 0;
-		_asm sti
-	}
-}
-
 /////////////////////////////////////////////////////////////////////////////
 //½º·¹µå
 /////////////////////////////////////////////////////////////////////////////
@@ -125,7 +89,7 @@ BYTE SetLocalTime(LPSYSTEMTIME lpSystemTime)
 	OutPortByte(RTC_INDEX_REG, RTC_STATUS_A);    //checking status -read access
 	TimeOut = 1000;
 	while (InPortByte(RTC_VALUE_REG) & 0x80)
-		if (TimeOut< 0)
+		if (TimeOut < 0)
 			return 0;
 		else
 			TimeOut--;
@@ -162,7 +126,7 @@ void ksleep(int millisecond)
 
 void printf(const char* str, ...)
 {
-	if(!str)
+	if (!str)
 		return;
 
 	va_list		args;
@@ -184,7 +148,7 @@ void printf(const char* str, ...)
 				break;
 			}
 
-					  /*** address of ***/
+					/*** address of ***/
 			case 's': {
 				int c = (int&)va_arg(args, char);
 				char str[256];
@@ -194,7 +158,7 @@ void printf(const char* str, ...)
 				break;
 			}
 
-					  /*** integers ***/
+					/*** integers ***/
 			case 'd':
 			case 'i': {
 				int c = va_arg(args, int);
@@ -205,8 +169,8 @@ void printf(const char* str, ...)
 				break;
 			}
 
-					  /*** display in hex ***/
-					  /*int*/
+					/*** display in hex ***/
+					/*int*/
 			case 'X': {
 				int c = va_arg(args, int);
 				char str[32] = { 0 };
@@ -215,7 +179,7 @@ void printf(const char* str, ...)
 				i++;		// go to next character
 				break;
 			}
-					  /*unsigned int*/
+					/*unsigned int*/
 			case 'x': {
 				unsigned int c = va_arg(args, unsigned int);
 				char str[32] = { 0 };

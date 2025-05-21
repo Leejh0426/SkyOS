@@ -12,7 +12,7 @@ void TestInterrupt()
 	//TestDivideByZero();
 	
 	//TestBreakPoint();
-	TestInvalidOpcode();
+	//TestInvalidOpcode();
 }
 
 int _divider = 0;

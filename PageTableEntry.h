@@ -17,7 +17,7 @@ namespace PageTableEntry
 		I86_PTE_PAT = 0X80,
 		I86_PTE_CPU_GLOBAL = 0X100,
 		I86_PTE_LV4_GLOBAL = 0X200,
-		I86_PTE_FRAME = 0X7FFFF000
+		I86_PTE_FRAME = 0X7FFFF000 //1111111111111111111000000000000
 	};
 
 	void AddAttribute(PTE* entry, uint32_t attr); //속성추가
