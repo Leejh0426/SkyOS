@@ -43,6 +43,16 @@
     <ClCompile Include="kheap.cpp">
       <Filter>Heap</Filter>
     </ClCompile>
+    <ClCompile Include="ordered_array.cpp">
+      <Filter>Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="ZetPlane.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="SysAPI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kmain.h" />
@@ -92,6 +102,19 @@
     <ClInclude Include="ordered_array.h">
       <Filter>Heap</Filter>
     </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="ZetPlane.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="PureCallExtend.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="TestInteger.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="SysAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CPU">
@@ -102,6 +125,9 @@
     </Filter>
     <Filter Include="Heap">
       <UniqueIdentifier>{ab8a5f6a-74fd-4d31-a134-6f9192f19199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{74324e5d-5d22-4588-b10b-0a353ae8ed89}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

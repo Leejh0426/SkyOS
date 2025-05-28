@@ -27,13 +27,12 @@ The system has been halted.\n\n";
 extern int _divider;
 extern int _dividend;
 
-
-//void HandleDivideByZero(registers_t regs)
-//{
-//	_divider = 10;
-//	_dividend = 100;
-//}
-
+/*
+void HandleDivideByZero(registers_t regs)
+{
+	_divider = 10;
+	_dividend = 100;
+}*/
 
 void HandleDivideByZero(registers_t regs)
 {
@@ -109,46 +108,11 @@ interrupt void kHandleBoundsCheckFault() {
 	SkyConsole::Print("Bounds check fault\n");
 	for (;;);
 }
-void HandleInvalidOpcode(registers_t regs)
-{
-	kExceptionMessageHeader();
-	SkyConsole::Print("Invalid Opcode at Address[0x%x:0x%x]\n", regs.cs, regs.eip);
-	SkyConsole::Print("EFLAGS[0x%x]\n", regs.eflags);
-	SkyConsole::Print("ss : 0x%x\n", regs.ss);
-	for (;;);
-}
 
 interrupt void kHandleInvalidOpcodeFault() {
-
-	_asm {
-		cli
-		pushad
-
-		push ds
-		push es
-		push fs
-		push gs
-	}
-
-	_asm
-	{
-		call HandleInvalidOpcode
-	}
-
-	_asm {
-
-		pop gs
-		pop fs
-		pop es
-		pop ds
-
-		popad
-
-		mov al, 0x20
-		out 0x20, al
-		sti
-		iretd
-	}
+	kExceptionMessageHeader();
+	SkyConsole::Print("Invalid opcode");
+	for (;;);
 }
 
 interrupt void kHandleNoDeviceFault()

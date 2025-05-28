@@ -5,19 +5,13 @@
 #include "PIT.h"
 #include "time.h"
 
-void SKYASSERT(bool result, const char* pMsg);
+#define ASSERT(a, b) if(a == false) SkyConsole::Print("Kernel Panic : %s\n", b); _asm hlt
 
-/////////////////////////////////////////////////////////////////////////////
-//µ¿±âÈ­
-/////////////////////////////////////////////////////////////////////////////
-typedef struct _CRITICAL_SECTION {
+#define SKY_ASSERT(Expr, Msg) \
+    __SKY_ASSERT(#Expr, Expr, __FILE__, __LINE__, Msg)
 
-	LONG LockRecursionCount;
-	HANDLE OwningThread;        // from the thread's ClientId->UniqueThread
+void __SKY_ASSERT(const char* expr_str, bool expr, const char* file, int line, const char* msg);
 
-} CRITICAL_SECTION, * LPCRITICAL_SECTION;;
-
-extern CRITICAL_SECTION g_criticalSection;
 
 #define kEnterCriticalSection()	__asm	PUSHFD	__asm CLI
 #define kLeaveCriticalSection()		__asm	POPFD

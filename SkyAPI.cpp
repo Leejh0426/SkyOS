@@ -1,28 +1,19 @@
-#include "SkyAPI.h"
-#include "SkyConsole.h"
-#include "Hal.h"
-#include "string.h"
-#include "va_list.h"
-#include "stdarg.h"
-#include "sprintf.h"
+#include "SkyOS.h"
 
-
-CRITICAL_SECTION g_criticalSection;
-
-void SKYASSERT(bool result, const char* pMsg)
+void __SKY_ASSERT(const char* expr_str, bool expr, const char* file, int line, const char* msg)
 {
-	if (result == false)
+	if (!expr)
 	{
-		SkyConsole::Print("%s", pMsg);
-		_asm hlt
+		//SkyConsole::Print("%s %s, %s %d\n", msg, expr_str, file, line);
+		//for (;;);
+		char buf[256];
+		sprintf(buf, "Assert failed: %s Expected: %s %s %d\n", msg, expr_str, file, line);
+
+
+		HaltSystem(buf);
 	}
 }
 
-void SKYAPI kInitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
-{
-	lpCriticalSection->LockRecursionCount = 0;
-	lpCriticalSection->OwningThread = 0;
-}
 /////////////////////////////////////////////////////////////////////////////
 //½º·¹µå
 /////////////////////////////////////////////////////////////////////////////

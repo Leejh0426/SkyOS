@@ -2,6 +2,7 @@
 #include "SkyTest.h"
 #include "PhysicalMemoryManager.h"
 #include "VirtualMemoryManager.h"
+#include "HeapManager.h"
 #include "Exception.h"
 #include "FPU.h"
 
@@ -80,6 +81,7 @@ void kmain(unsigned long magic, unsigned long addr)
 	{
 		EnableFPU();
 		SkyConsole::Print("FPU Init..\n");
+	;
 	}
 
 	//물리/가상 메모리 매니저를 초기화한다.
@@ -87,9 +89,23 @@ void kmain(unsigned long magic, unsigned long addr)
 
 	SkyConsole::Print("Memory Manager Init Complete\n");
 
+	int heapFrameCount = 256 * 10 * 5;
+	unsigned int requiredHeapSize = heapFrameCount * PAGE_SIZE;
+
+	int memorysize = PhysicalMemoryManager::GetMemorySize();
+	if (requiredHeapSize > memorysize)
+	{
+		requiredHeapSize = memorysize/2;
+		heapFrameCount = requiredHeapSize / PAGE_SIZE / 2;
+	}
+	HeapManager::InitKernelHeap(heapFrameCount);
+	SkyConsole::Print("Heap %dMB Allocation\n", requiredHeapSize / 1048576);
+
 	kLeaveCriticalSection();
 
 	StartPITCounter(100, I86_PIT_OCW_COUNTER_0, I86_PIT_OCW_MODE_SQUAREWAVEGEN);
+	
+	TestCPlusPlus();
 
 	for (;;);
 

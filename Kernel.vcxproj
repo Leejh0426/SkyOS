@@ -20,15 +20,19 @@
     <ClCompile Include="InitKernel.cpp" />
     <ClCompile Include="kheap.cpp" />
     <ClCompile Include="kmain.cpp" />
+    <ClCompile Include="ordered_array.cpp" />
     <ClCompile Include="PageDirectoryEntry.cpp" />
     <ClCompile Include="PageTableEntry.cpp" />
     <ClCompile Include="PhysicalMemoryManager.cpp" />
     <ClCompile Include="PIC.cpp" />
     <ClCompile Include="PIT.cpp" />
+    <ClCompile Include="Plane.cpp" />
     <ClCompile Include="SkyAPI.cpp" />
     <ClCompile Include="SkyConsole.cpp" />
     <ClCompile Include="SkyTest.cpp" />
+    <ClCompile Include="SysAPI.cpp" />
     <ClCompile Include="VirtualMemoryManager.cpp" />
+    <ClCompile Include="ZetPlane.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exception.h" />
@@ -47,11 +51,16 @@
     <ClInclude Include="PhysicalMemoryManager.h" />
     <ClInclude Include="PIC.h" />
     <ClInclude Include="PIT.h" />
+    <ClInclude Include="Plane.h" />
+    <ClInclude Include="PureCallExtend.h" />
     <ClInclude Include="SkyAPI.h" />
     <ClInclude Include="SkyConsole.h" />
     <ClInclude Include="SkyOS.h" />
     <ClInclude Include="SkyTest.h" />
+    <ClInclude Include="SysAPI.h" />
+    <ClInclude Include="TestInteger.h" />
     <ClInclude Include="VirtualMemoryManager.h" />
+    <ClInclude Include="ZetPlane.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3EEB4C94-0534-40F5-BBF1-01C0C0AC5658}</ProjectGuid>

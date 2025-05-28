@@ -18,5 +18,6 @@
 #include "IDT.h"
 #include "PIC.h"
 #include "PIT.h"
+#include "Exception.h"
 #include "PhysicalMemoryManager.h"
-//#include "VirtualMemoryManager.h"
+#include "VirtualMemoryManager.h"

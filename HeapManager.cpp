@@ -47,11 +47,14 @@ namespace HeapManager
 
 	bool MapHeapToAddressSpace(PageDirectory* curPageDirectory) 
 	{
-		int endAddress = (uint32_t)KERNEL_VIRTUAL_HEAP_ADDRESS + m_heapFrameCount * PMM_BLOCK_SIZE;
+		//int endAddress = (uint32_t)KERNEL_VIRTUAL_HEAP_ADDRESS + m_heapFrameCount * PMM_BLOCK_SIZE;
 		
 		for (int i = 0; i < m_heapFrameCount; i++)
 		{
-			MapPhysicalAddressToVirtualAddress(curPageDirectory, (uint32_t)KERNEL_VIRTUAL_HEAP_ADDRESS + i * PAGE_SIZE, (uint32_t)m_pKernelHeapPhysicalMemory + i * PAGE_SIZE, I86_PTE_PRESENT | I86_PTE_WRITABLE);
+			MapPhysicalAddressToVirtualAddress(curPageDirectory
+				, (uint32_t)KERNEL_VIRTUAL_HEAP_ADDRESS + i * PAGE_SIZE
+				, (uint32_t)m_pKernelHeapPhysicalMemory + i * PAGE_SIZE
+				, I86_PTE_PRESENT | I86_PTE_WRITABLE);
 
 		}
 

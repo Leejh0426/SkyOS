@@ -55,3 +55,6 @@ void kHandleMachineCheckAbort();
 void kHandleSIMDFPUFault();
 
 void HaltSystem(const char* errMsg);
+
+//페이지 폴트
+void kHandlePageFault();
