@@ -12,12 +12,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="FloppyDisk.cpp" />
     <ClCompile Include="FPU.cpp" />
     <ClCompile Include="GDT.cpp" />
     <ClCompile Include="HAL.cpp" />
     <ClCompile Include="HeapManager.cpp" />
     <ClCompile Include="IDT.cpp" />
     <ClCompile Include="InitKernel.cpp" />
+    <ClCompile Include="KeyboardController.cpp" />
     <ClCompile Include="kheap.cpp" />
     <ClCompile Include="kmain.cpp" />
     <ClCompile Include="ordered_array.cpp" />
@@ -36,12 +38,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exception.h" />
+    <ClInclude Include="FloppyDisk.h" />
+    <ClInclude Include="FloppyDiskIO.h" />
     <ClInclude Include="FPU.h" />
     <ClInclude Include="GDT.h" />
     <ClInclude Include="HAL.h" />
     <ClInclude Include="HeapManager.h" />
     <ClInclude Include="IDT.h" />
     <ClInclude Include="InitKernel.h" />
+    <ClInclude Include="KeyboardController.h" />
     <ClInclude Include="kheap.h" />
     <ClInclude Include="kmain.h" />
     <ClInclude Include="MultiBoot.h" />

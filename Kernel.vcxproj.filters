@@ -53,6 +53,12 @@
       <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="SysAPI.cpp" />
+    <ClCompile Include="KeyboardController.cpp">
+      <Filter>Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="FloppyDisk.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kmain.h" />
@@ -115,6 +121,15 @@
       <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="SysAPI.h" />
+    <ClInclude Include="KeyboardController.h">
+      <Filter>Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="FloppyDisk.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FloppyDiskIO.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CPU">
@@ -128,6 +143,12 @@
     </Filter>
     <Filter Include="Test">
       <UniqueIdentifier>{74324e5d-5d22-4588-b10b-0a353ae8ed89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Keyboard">
+      <UniqueIdentifier>{2fe21523-52ee-4c95-864d-67e8294e290b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileSystem">
+      <UniqueIdentifier>{26bdb5ed-301d-4a36-8b01-54093b366e4b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
